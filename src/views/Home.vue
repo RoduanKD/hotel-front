@@ -11,5 +11,9 @@ export default {
   components: {
     HelloWorld,
   },
+
+  mounted () {
+    console.log(this.$store.state.message)
+  },
 }
 </script>
