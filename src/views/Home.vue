@@ -1,15 +1,16 @@
 <template>
-  <hello-world />
+  <div>
+    <reservation />
+  </div>
 </template>
 
 <script>
-import HelloWorld from '../components/HelloWorld'
-
+import Reservation from '../components/Reservation.vue'
 export default {
   name: 'Home',
 
   components: {
-    HelloWorld,
+    Reservation,
   },
 }
 </script>
