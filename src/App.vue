@@ -28,11 +28,15 @@
       <v-spacer />
 
       <v-btn
-        href="https://github.com/vuetifyjs/vuetify/releases/latest"
-        target="_blank"
-        text
+        color="yellow"
+        dark
       >
-        <span class="mr-2">Latest Release</span>
+        <router-link
+          to="/reservation"
+          dark
+        >
+          Go to Reservation
+        </router-link>
         <v-icon>mdi-open-in-new</v-icon>
       </v-btn>
     </v-app-bar>
@@ -53,3 +57,6 @@ export default {
   }),
 }
 </script>
+<style scoped>
+
+</style>

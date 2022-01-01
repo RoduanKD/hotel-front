@@ -8,6 +8,7 @@ import axios from 'axios'
 import VueAxios from 'vue-axios'
 
 Vue.config.productionTip = false
+axios.defaults.baseURL = 'http://hotel.webmyidea.com/api/v1'
 Vue.use(VueAxios, axios)
 
 new Vue({
