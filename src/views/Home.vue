@@ -1,8 +1,12 @@
 <template>
-  <hello-world />
+  <div>
+    <hello-world />
+    <offers />
+  </div>
 </template>
 
 <script>
+import Offers from '../components/Offers.vue'
 import HelloWorld from '../components/HelloWorld'
 
 export default {
@@ -10,6 +14,7 @@ export default {
 
   components: {
     HelloWorld,
+    Offers,
   },
 
   mounted () {
