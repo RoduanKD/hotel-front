@@ -24,22 +24,29 @@
               cols="12"
               md="3"
             >
-              <v-item v-slot="{ active, toggle }">
-                <v-img
-                  :src="item.src"
-                  height="150"
-                  class="text-right pa-2"
-                  @click="toggle"
-                >
-                  <v-btn
-                    icon
-                    dark
+              <v-item
+                v-slot="{ active, toggle }"
+                :value="item.name"
+              >
+                <v-hover v-slot="{hover}">
+                  <v-img
+                    v-vue-aos="{animationClass:'animate__fadeInRight animate__animated'}"
+                    :src="item.src"
+                    height="150"
+                    class="text-right pa-2"
+                    :class="{'scale': hover}"
+                    @click="toggle"
                   >
-                    <v-icon color="red">
-                      {{ active ? 'mdi-heart' : 'mdi-heart-outline' }}
-                    </v-icon>
-                  </v-btn>
-                </v-img>
+                    <v-btn
+                      icon
+                      dark
+                    >
+                      <v-icon color="red">
+                        {{ active ? 'mdi-heart' : 'mdi-heart-outline' }}
+                      </v-icon>
+                    </v-btn>
+                  </v-img>
+                </v-hover>
               </v-item>
             </v-col>
           </v-row>
@@ -55,18 +62,23 @@ export default {
     store,
     items: [
       {
+        name: 'orange-juice',
         src: 'https://cdn.pixabay.com/photo/2020/04/03/16/45/orange-juice-4999519__340.png',
       },
       {
+        name: 'kiwi-coctail',
         src: 'https://cdn.pixabay.com/photo/2016/06/10/11/55/kiwi-coctail-1447939__340.jpg',
       },
       {
+        name: 'melon',
         src: 'https://cdn.pixabay.com/photo/2017/06/24/18/59/melon-2438503__340.jpg',
       },
       {
+        name: 'Fruits',
         src: 'https://cdn.pixabay.com/photo/2017/07/27/18/02/eat-2546197__340.jpg',
       },
       {
+        name: 'coffee',
         src: 'https://cdn.pixabay.com/photo/2010/12/13/10/12/background-2485__340.jpg',
       },
       {
@@ -83,3 +95,9 @@ export default {
   }),
 }
 </script>
+<style>
+.scale .v-image__image{
+  transform: scale(1.2);
+  transition: transform 1s;
+}
+</style>

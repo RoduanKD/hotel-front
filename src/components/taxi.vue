@@ -24,23 +24,28 @@
               cols="12"
               md="4"
             >
-              <v-item v-slot="{ active ,toggle}">
-                <v-img
-                  :src="item.src"
-                  height="150"
-                  class="text-right pa-2"
-                  :name="item.name"
-                  @click="toggle"
-                >
-                  <v-btn
-                    icon
-                    dark
+              <v-item
+                v-slot="{ active ,toggle}"
+                :value="item.name"
+              >
+                <v-hover v-slot="{hover}">
+                  <v-img
+                    :src="item.src"
+                    height="150"
+                    class="text-right pa-2"
+                    :class="{'scale': hover}"
+                    @click="toggle"
                   >
-                    <v-icon color="red">
-                      {{ active ? 'mdi-heart' : 'mdi-heart-outline' }}
-                    </v-icon>
-                  </v-btn>
-                </v-img>
+                    <v-btn
+                      icon
+                      dark
+                    >
+                      <v-icon color="red">
+                        {{ active ? 'mdi-heart' : 'mdi-heart-outline' }}
+                      </v-icon>
+                    </v-btn>
+                  </v-img>
+                </v-hover>
               </v-item>
             </v-col>
           </v-row>
@@ -54,6 +59,8 @@ import store from '@/store'
 export default {
   data: () => ({
     store,
+    expand: false,
+    expand2: false,
     items: [
       {
         name: 'private car',
@@ -65,10 +72,14 @@ export default {
       },
     ],
   }),
-  mounted () {
-    console.log(this.$store.state.taxes)
-  },
   methods: {
   },
 }
 </script>
+
+<style>
+.scale .v-image__image{
+  transform: scale(1.2);
+  transition: transform 1s;
+}
+</style>

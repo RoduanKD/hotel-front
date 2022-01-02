@@ -21,10 +21,11 @@
           <v-select
             style="width: 400px; color: #ffbc00"
             :items="rooms"
+            item-text=""
             label="Enter your room number please"
           />
           <v-select
-            :items="store.state.food"
+            :items="$store.state.food"
             label="Make sure about food"
           />
           <v-select
@@ -103,10 +104,10 @@ export default {
     //     this.rooms = this.rooms[i].id[i]
     //   }
     // },
-    submit () {
-      // this.$v.$touch()
-      this.submit = true
-    },
+    // submit () {
+    //   // this.$v.$touch()
+    //   this.submit = true
+    // },
     clear () {
       // this.$v.$reset()
       // this.name = ''
