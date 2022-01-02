@@ -1,6 +1,7 @@
 <template>
   <div>
     <hello-world />
+    <gallery />
     <offers />
     <reviews />
   </div>
@@ -10,6 +11,7 @@
 import Offers from '../components/Offers.vue'
 import HelloWorld from '../components/HelloWorld'
 import Reviews from '@/components/Reviews.vue'
+import Gallery from '@/components/Gallery.vue'
 
 export default {
   name: 'Home',
@@ -18,6 +20,7 @@ export default {
     HelloWorld,
     Offers,
     Reviews,
+    Gallery,
   },
 
   mounted () {
