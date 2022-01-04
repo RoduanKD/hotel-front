@@ -11,7 +11,7 @@ import 'animate.css'
 import { ValidationProvider } from 'vee-validate'
 import AnimatedNumber from './components/AnimatedNumber.vue'
 
-axios.defaults.baseURL = 'http://hotel.webmyidea.com/api/v1'
+axios.defaults.baseURL = 'https://hotel.webmyidea.com/api/v1'
 axios.defaults.headers.Authorization = `Bearer ${store.state.token}`
 
 Vue.config.productionTip = false
