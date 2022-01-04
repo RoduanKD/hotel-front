@@ -9,7 +9,7 @@
           v-vue-aos="{animationClass:'animate__fadeInRight animate__animated'}"
           class="text-h3 text-center my-10"
         >
-          OUR TEAM
+          OUR TEAM (Frontend #7)
         </div>
       </v-col>
       <v-col
@@ -99,12 +99,15 @@ export default {
           img: 'Salwa.jpg',
         },
         {
-          name: 'kamal al khatib',
+          name: 'Kamal Al Khatib',
           course_title: 'Front End',
           img: 'Kamal.jpg',
         },
       ],
     }
+  },
+  mounted () {
+    this.team.sort((a, b) => (a.name > b.name) ? 1 : ((b.name > a.name) ? -1 : 0))
   },
   // created () {
   //   const self = this
