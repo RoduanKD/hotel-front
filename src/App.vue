@@ -16,6 +16,7 @@
         max-height="50"
         max-width="150"
         src="https://livedemo00.template-help.com/wt_prod-19216/images/logo-default-197x54.png"
+        @click="$router.push({name: 'Home'})"
       />
       <v-spacer />
       <v-spacer />
@@ -48,6 +49,7 @@
           tile
           height="40px"
           width="150px"
+          :to="{name: 'Reservation'}"
         >
           book now
         </v-btn>

@@ -19,14 +19,14 @@
             <v-img
               width="500"
               height="300"
-              :src="photo[i % photos.length].src"
+              :src="photos[i % photos.length].src"
               :class="{'scale':hover}"
             />
           </v-hover>
         </v-col>
         <v-col>
           <v-card-title>
-            {{ photo[i % photos.length].type }}
+            {{ photos[i % photos.length].type }}
           </v-card-title>
           <v-card-text>
             <v-row
@@ -49,9 +49,14 @@
                 class="text-h7 mt-5"
               >
                 {{ room.description }}
-                {{ room.beds }}
-                {{ room.status }}
-                {{ room.price }}
+                {{ room.description }}
+                {{ room.description }}
+                <br>
+                <b>beds:</b> {{ room.beds }}
+                <br>
+                <b>status:</b> {{ room.status }}
+                <br>
+                <b>price:</b> {{ room.price }}
               </div>
               <v-hover
                 v-slot="{ hover }"
@@ -106,9 +111,8 @@ export default {
   }),
   mounted () {
     const self = this
-    this.axios.get('/rooms/?room_status[]=available').then((res) => {
-      self.rooms = res.data.data
-      console.log(res.data.data)
+    this.axios.get('/rooms?room_status[]=available').then((res) => {
+      self.rooms = res.data.data.slice(0, 3)
     })
   },
 

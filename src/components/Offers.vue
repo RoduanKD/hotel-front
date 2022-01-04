@@ -78,7 +78,6 @@ export default {
     const self = this
     this.axios.get('http://hotel.webmyidea.com/api/v1/offers').then(function (res) {
       self.offers = res.data.data
-      console.log(self.offers.name)
     })
   },
 }
