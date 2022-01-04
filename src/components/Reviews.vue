@@ -19,8 +19,7 @@
           width="300"
         >
           <v-avatar
-            size="56"
-            class="mt-5"
+            size="100"
           >
             <img
               alt="user"

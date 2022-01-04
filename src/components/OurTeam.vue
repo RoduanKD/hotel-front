@@ -21,7 +21,7 @@
         <v-hover v-slot="{ hover }">
           <div>
             <v-avatar
-              size="90"
+              size="170"
               :class="{'border': hover}"
             >
               <img
