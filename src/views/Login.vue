@@ -5,10 +5,11 @@
         <v-col>
           <v-card
 
+            v-vue-aos="{ animationClass: 'animate__fadeInRight animate__animated' }"
+
             class=" my-8 py-8 background"
 
-            elevation="15"
-
+            elevation="5"
             shaped
           >
             <v-card-title class="text-h4">
@@ -30,7 +31,7 @@
                   <v-text-field
                     v-model="password"
                     color="#000000"
-                    class="mx-12"
+                    class="mx-12 text-dark"
                     type="password"
 
                     :error-messages="errors"
@@ -61,15 +62,43 @@
                 </validation-provider>
 
                 <v-btn
-
                   class="mx-12 rounded-5"
                   type="submit"
                   color="#F5CE3F"
                   :disabled="invalid"
-                  @click="submit"
                 >
                   submit
                 </v-btn>
+                <v-dialog
+                  v-model="dialog"
+                  width="500"
+                >
+                  <v-card>
+                    <v-card-title
+                      class="text-h5 amber lighten-2"
+                    >
+                      Wrong login
+                    </v-card-title>
+
+                    <v-card-text class="text-center mt-5">
+                      Please try again
+                    </v-card-text>
+
+                    <v-divider />
+
+                    <v-card-actions>
+                      <v-spacer />
+                      <v-btn
+                        color="#F5CE3F"
+
+                        @click="dialog = false"
+                      >
+                        OK
+                      </v-btn>
+                    </v-card-actions>
+                  </v-card>
+                </v-dialog>
+
                 <v-btn
 
                   class="rounded-5"
@@ -117,6 +146,7 @@ export default {
   data: () => ({
     password: '',
     phoneNumber: '',
+    dialog: '',
 
   }),
 
@@ -124,7 +154,7 @@ export default {
     submit () {
       const payload = {
         password: this.password,
-        phoneNumber: this.phoneNumber,
+        phone_number: this.phoneNumber,
 
       }
       const self = this
@@ -137,7 +167,7 @@ export default {
           localStorage.setItem('token', res.data.data.token)
           self.$store.state.token = res.data.data.token
         } else {
-          alert('Wrong email or password')
+          this.dialog = true
         }
         this.$refs.observer.validate()
       })
@@ -158,15 +188,15 @@ export default {
     height: 500px;
 
     top: calc(50% - 250px);
-    left: calc(80% - 250px);
-background-image: radial-gradient(#FAFAFA, #E0E0E0);
+    left: calc(50% - 250px);
+    opacity: 0.9;
 
 }
 .cover{
   width: 100%;
   height: 100%;
-  background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTT4XsX6BXovhpC87onVDYiX7-HoVnPzUlqBw&usqp=CAU);
-background-size:contain;
-
+  background-image: url(https://images.unsplash.com/photo-1586966145732-8b681e97c682?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDR8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60);
+background-size: cover;
 }
+
 </style>
