@@ -3,12 +3,12 @@
     id="stats"
     class="my-12"
   >
-    <v-row>
+    <v-row justify="center">
       <v-col
         v-vue-aos="{animationClass:'animate__fadeInUp animate__animated'}"
         cols="12"
       >
-        <div class="text-h4 font-weight-regular text-uppercase text-center">
+        <div class="text-h4 font-weight-regular text-uppercase text-center mb-6">
           More Than 10 Years Of Following The Dream
         </div>
       </v-col>
@@ -31,7 +31,7 @@
                 class="py-5"
                 color="orange accent-2"
               >
-                mdi-chat
+                mdi-home
               </v-icon>
             </div>
             <vue-aos
@@ -76,7 +76,7 @@
                 class="py-5"
                 color="orange accent-2"
               >
-                mdi-chat
+                mdi-star
               </v-icon>
             </div>
             <vue-aos
@@ -121,7 +121,7 @@
                 class="py-5"
                 color="orange accent-2"
               >
-                mdi-chat
+                mdi-account
               </v-icon>
             </div>
             <vue-aos
