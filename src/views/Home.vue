@@ -1,26 +1,26 @@
 <template>
   <div>
-    <hello-world />
     <gallery />
     <offers />
     <reviews />
+    <our-team />
   </div>
 </template>
 
 <script>
 import Offers from '../components/Offers.vue'
-import HelloWorld from '../components/HelloWorld'
 import Reviews from '@/components/Reviews.vue'
 import Gallery from '@/components/Gallery.vue'
+import OurTeam from '@/components/OurTeam.vue'
 
 export default {
   name: 'Home',
 
   components: {
-    HelloWorld,
     Offers,
     Reviews,
     Gallery,
+    OurTeam,
   },
 
   mounted () {

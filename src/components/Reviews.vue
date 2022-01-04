@@ -10,21 +10,31 @@
         </div>
       </v-col>
       <v-col
-        v-for="review in reviews"
-        :key="review.id"
+        v-for="(review,i) in reviews"
+        :key="i"
         v-vue-aos="{animationClass:'animate__fadeInLeft animate__animated'}"
       >
         <v-card
-          class=" mx-auto"
+          class=" mx-auto text-center justify-center"
           width="300"
         >
-          <v-card-title class="yellow--text text--darken-1">
+          <v-avatar
+            size="56"
+            class="mt-5"
+          >
+            <img
+              alt="user"
+              :src="imgs[i]"
+              class="d-flex justify-center"
+            >
+          </v-avatar>
+          <v-card-title class="yellow--text text--darken-1 justify-center">
             {{ review.name }}
           </v-card-title>
           <v-card-subtitle>
             {{ review.job_title }}
           </v-card-subtitle>
-          <v-card-text class="text-center">
+          <v-card-text>
             {{ review.message }}
             <div class="text-center mt-12">
               <v-rating
@@ -53,6 +63,12 @@ export default {
 
       ],
       length: 5,
+      imgs: ['https://livedemo00.template-help.com/wt_prod-19216/images/user-7-118x118.jpg',
+        'https://livedemo00.template-help.com/wt_prod-19216/images/user-14-87x87.jpg',
+        'https://livedemo00.template-help.com/wt_prod-19216/images/user-15-87x87.jpg',
+        'https://livedemo00.template-help.com/wt_prod-19216/images/user-8-118x118.jpg',
+        'https://livedemo00.template-help.com/wt_prod-19216/images/user-7-118x118.jpg',
+        'https://livedemo00.template-help.com/wt_prod-19216/images/user-9-118x118.jpg'],
     }
   },
   created () {
@@ -70,5 +86,4 @@ export default {
     letter-spacing: .05em;
     text-transform: uppercase;
 }
-
 </style>

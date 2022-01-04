@@ -49,7 +49,10 @@
                   class="text-center"
                   cols="12"
                 >
-                  <v-btn color="yellow darken-1">
+                  <v-btn
+                    x-large
+                    color="yellow darken-1 "
+                  >
                     BOOK NOW
                   </v-btn>
                 </v-col>
