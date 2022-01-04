@@ -1,19 +1,25 @@
 <template>
-  <hello-world />
+  <div>
+    <gallery />
+    <offers />
+    <reviews />
+    <our-team />
+  </div>
 </template>
 
 <script>
-import HelloWorld from '../components/HelloWorld'
+import Offers from '../components/Offers.vue'
+import Reviews from '@/components/Reviews.vue'
+import Gallery from '@/components/Gallery.vue'
+import OurTeam from '@/components/OurTeam.vue'
 
 export default {
   name: 'Home',
-
   components: {
-    HelloWorld,
-  },
-
-  mounted () {
-    console.log(this.$store.state.message)
+    Offers,
+    Reviews,
+    Gallery,
+    OurTeam,
   },
 }
 </script>

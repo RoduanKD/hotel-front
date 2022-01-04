@@ -1,4 +1,4 @@
-// import store from '@/store'
+import store from '@/store'
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
@@ -32,6 +32,30 @@ const routes = [
     name: 'contact',
     component: () => import(/* webpackChunkName: "contact" */ '../views/contact.vue'),
   },
+  {
+    path: '/rooms',
+    name: 'Rooms',
+    component: () => import(/* webpackChunkName: "rooms" */ '../views/Rooms.vue'),
+  },
+  {
+    path: '/rooms/:id',
+    name: 'Room',
+    component: () => import(/* webpackChunkName: "room" */ '../views/Room.vue'),
+    props: true,
+  },
+  {
+    path: '/reservation',
+    name: 'Reservation',
+    component: () => import(/* webpackChunkName: "reservation" */ '../views/Reservation.vue'),
+  },
+  {
+    path: '/room-service-requests',
+    name: 'RoomServiceRequests',
+    component: () => import(/* webpackChunckName: "room-service-requests") */ '../views/RoomServiceRequest.vue'),
+    meta: {
+      auth: true,
+    },
+  },
 ]
 
 const router = new VueRouter({
@@ -40,8 +64,8 @@ const router = new VueRouter({
   routes,
 })
 
-// router.beforeEach((to, from, next) => {
-//   if (!store.state.token && to.meta.auth) { next('/login') } else next()
-// })
+router.beforeEach((to, from, next) => {
+  if (!store.state.token && to.meta.auth) { next('/login') } else next()
+})
 
 export default router
