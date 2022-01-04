@@ -7,7 +7,6 @@
       shrink-on-scroll
       prominent
       height="30px"
-      scroll-target="#scrolling-techniques-3"
       app
     >
       <v-spacer />
