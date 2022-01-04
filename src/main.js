@@ -9,6 +9,7 @@ import VueAxios from 'vue-axios'
 import * as VueAos from 'vue-aos'
 import 'animate.css'
 import { ValidationProvider } from 'vee-validate'
+import AnimatedNumber from './components/AnimatedNumber.vue'
 
 axios.defaults.baseURL = 'http://hotel.webmyidea.com/api/v1'
 
@@ -18,9 +19,11 @@ Vue.use(VueAxios, axios)
 Vue.use(VueAos)
 Vue.component('ValidationProvider', ValidationProvider)
 
+Vue.component('animated-number', AnimatedNumber)
+
 new Vue({
   router,
   store,
   vuetify,
-  render: h => h(App),
+  render: (h) => h(App),
 }).$mount('#app')
