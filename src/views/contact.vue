@@ -13,10 +13,11 @@
         <v-col
           cols="6"
         >
-          <h1>
+          <h1 v-vue-aos="{animationClass:'animate__fadeInLeft animate__animated'}">
             Get In Touch
           </h1>
           <p
+            v-vue-aos="{animationClass:'animate__fadeInLeft animate__animated'}"
             class="font-italic"
           >
             If you have any questions, just fill in the contact form, and we will answer you shortly.
@@ -26,13 +27,16 @@
             ref="form"
             v-model="valid"
             lazy-validation
+            @submit.prevent="send"
           >
             <v-text-field
               v-model="firstname"
+              v-vue-aos="{animationClass:'animate__fadeInLeft animate__animated'}"
               :rules="nameRules"
               :counter="10"
-              label="First name"
+              label="Title"
               required
+              :error-messages="errors.title"
             />
             <!-- </v-col> -->
             <!--
@@ -40,12 +44,21 @@
                                 cols="12"
                                 md="4"
                               > -->
-            <v-text-field
+            <!-- <v-text-field
               v-model="lastname"
+              v-vue-aos="{animationClass:'animate__fadeInLeft animate__animated'}"
               :rules="nameRules"
               :counter="10"
-              label="Last name"
+              label="Question/thanks/complain"
               required
+              :error-messages="errors.type"
+            /> -->
+            <v-select
+              v-model="lastname"
+              v-vue-aos="{animationClass:'animate__fadeInLeft animate__animated'}"
+              :items="items"
+              label="select"
+              :error-messages="errors.type"
             />
             <!-- </v-col> -->
             <!-- <v-col -->
@@ -54,21 +67,25 @@
             <!-- > -->
             <v-text-field
               v-model="email"
+              v-vue-aos="{animationClass:'animate__fadeInLeft animate__animated'}"
               :rules="emailRules"
               label="E-mail"
               required
+              :error-messages="errors.email"
             />
             <!-- </v-col> -->
             <v-textarea
               v-model="message"
+              v-vue-aos="{animationClass:'animate__fadeInLeft animate__animated'}"
               label="Your Message"
               auto-grow
               rows="4"
               row-height="25"
-              shaped
+              :error-messages="errors.content"
             />
             <v-checkbox
               v-model="agreement"
+              v-vue-aos="{animationClass:'animate__fadeInLeft animate__animated'}"
               :rules="[rules.required]"
               color="deep-purple"
             >
@@ -86,6 +103,7 @@
               </template>
             </v-checkbox>
             <v-btn
+              v-vue-aos="{animationClass:'animate__fadeInLeft animate__animated'}"
               class="mr-4"
               type="submit"
               color="#ffdb73"
@@ -94,7 +112,10 @@
             >
               Send message
             </v-btn>
-            <v-btn @click="clear">
+            <v-btn
+              v-vue-aos="{animationClass:'animate__fadeInLeft animate__animated'}"
+              @click="clear"
+            >
               clear
             </v-btn>
           </v-form>
@@ -105,8 +126,9 @@
           >
             <v-card
               id="card"
+              v-vue-aos="{animationClass:'animate__fadeInRight animate__animated animate__slowe'}"
               :elevation="hover ? 16 : 2"
-              class="mx-auto"
+              class="mx-auto mt-6"
               max-width="344"
               transition="scale-transition"
             >
@@ -123,7 +145,7 @@
                 >
                   mdi-home
                 </v-icon>
-                Hotel Address:
+                Hotel Address:<span>{{ info.setting.hotel_address }}</span>
               </p>
               <p>
                 <v-icon
@@ -134,12 +156,17 @@
                   mdi-pencil
                 </v-icon>
                 Hotel Name:
+
+                <span
+                  class="font-italic"
+                >{{ info.setting.hotel_name }}</span>
               </p>
             </v-card>
           </v-hover> <br> <br> <br> <br>
 
           <v-hover v-slot="{ hover }">
             <v-card
+              v-vue-aos="{animationClass:'animate__fadeInRight animate__animated animate__slowe'}"
               :elevation="hover ? 16 : 2"
               class="mx-auto"
               max-width="344"
@@ -157,7 +184,7 @@
                 >
                   mdi-email
                 </v-icon>
-                Hotel Email:
+                Hotel Email:<span>{{ info.setting.hotel_email }}</span>
               </p>
               <p>
                 <v-icon
@@ -167,18 +194,43 @@
                 >
                   mdi-phone
                 </v-icon>
-                Hotel Phone:
+                Hotel Phone:<span>{{ info.setting.hotel_phone }}</span>
               </p>
             </v-card>
           </v-hover>
         </v-col>
       </v-row>
+      <v-snackbar
+        v-model="snackbar"
+        shaped
+        top
+        centered
+      >
+        {{ text }}
+
+        <template v-slot:action="{ attrs }">
+          <v-btn
+            color="#ffdb73"
+            text
+            v-bind="attrs"
+            @click="snackbar = false"
+          >
+            Close
+          </v-btn>
+        </template>
+      </v-snackbar>
     </v-container>
   </div>
 </template>
 <script>
 export default {
   data: () => ({
+    items: ['Question', 'Thanks', 'complain'],
+    text: 'welcome to our hotel',
+    snackbar: false,
+    info: {
+      setting: {},
+    },
     valid: true,
     rules: { required: v => !!v || 'This field is required' },
     message: '',
@@ -194,18 +246,42 @@ export default {
       v => !!v || 'E-mail is required',
       v => /.+@.+/.test(v) || 'E-mail must be valid',
     ],
+    errors: {},
   }),
+  mounted () {
+    const self = this
+    this.axios.get('/settings').then(res => {
+      self.info = res.data.data
+      // console.log(res.data.data)
+    })
+  },
   methods: {
     clear () {
-    //   this.firstname = ''
-    //   this.lastname = ''
-    //   this.email = ''
-    //   this.agreement = null
-    //   this.message = ''
       this.$refs.form.reset()
     },
     validate () {
       this.$refs.form.validate()
+    },
+    send () {
+      const self = this
+      const postinfo = {
+        title: self.firstname,
+        type: self.lastname,
+        email: self.email,
+        content: self.message,
+      }
+      this.axios.post('/messages', postinfo).then(res => {
+        console.log(res.data.message)
+        if (res.data.message === 'message was created') {
+          // alert('Welcome to our Hotel')
+          // snackbar
+          self.snackbar = true
+        }
+      }).catch(err => {
+        // sanck
+        self.errors = err.response.data.errors
+        console.log(err.response.data.errors)
+      })
     },
   },
 }
@@ -217,6 +293,12 @@ h1,p{
 }
 #card{
   transition-duration: .3s;
+}
+p{
+  font-size: 18px;
+}
+span{
+  font-size: 16px;
 }
 
 </style>
