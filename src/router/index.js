@@ -2,7 +2,6 @@ import store from '@/store'
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
-// import Reservation from '../views/reservation.vue'
 
 Vue.use(VueRouter)
 
@@ -31,7 +30,7 @@ const routes = [
   {
     path: '/rooms',
     name: 'Rooms',
-    component: () => import(/* webpackChunkName: "room" */ '../views/Rooms.vue'),
+    component: () => import(/* webpackChunkName: "rooms" */ '../views/Rooms.vue'),
   },
   {
     path: '/rooms/:id',
@@ -42,10 +41,15 @@ const routes = [
   {
     path: '/reservation',
     name: 'Reservation',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/reservation.vue'),
+    component: () => import(/* webpackChunkName: "reservation" */ '../views/Reservation.vue'),
+  },
+  {
+    path: '/room-service-requests',
+    name: 'RoomServiceRequests',
+    component: () => import(/* webpackChunckName: "room-service-requests") */ '../views/RoomServiceRequest.vue'),
+    meta: {
+      auth: true,
+    },
   },
 ]
 
