@@ -11,7 +11,10 @@
     <v-container>
       <v-row>
         <v-col
-          cols="6"
+          cols="12"
+          md="4"
+          offset="0"
+          offset-md="1"
         >
           <h1 v-vue-aos="{animationClass:'animate__fadeInLeft animate__animated'}">
             Get In Touch
