@@ -1,6 +1,9 @@
 <template>
   <v-container>
-    <v-row class="my-12">
+    <v-row
+      class="my-12"
+      justify="center"
+    >
       <v-col cols="12">
         <div
           v-vue-aos="{animationClass:'animate__fadeInRight animate__animated'}"
