@@ -5,16 +5,13 @@
     </div>
 
     <v-card
-      v-for="room in rooms"
+      v-for="(room, i) in rooms"
       :key="room.id"
       class="mt-12 pa-0"
       outlined
       tile
     >
-      <v-row
-        v-for="(photo,j) in photos"
-        :key="j"
-      >
+      <v-row>
         <v-col>
           <v-hover
             v-slot="{ hover }"
@@ -22,14 +19,14 @@
             <v-img
               width="500"
               height="300"
-              :src="photo.src"
+              :src="photo[i % photos.length].src"
               :class="{'scale':hover}"
             />
           </v-hover>
         </v-col>
         <v-col>
           <v-card-title>
-            {{ photo.type }}
+            {{ photo[i % photos.length].type }}
           </v-card-title>
           <v-card-text>
             <v-row
@@ -111,7 +108,7 @@ export default {
     const self = this
     this.axios.get('/rooms/?room_status[]=available').then((res) => {
       self.rooms = res.data.data
-      // console.log(res.data.data)
+      console.log(res.data.data)
     })
   },
 

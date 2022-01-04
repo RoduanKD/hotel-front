@@ -24,16 +24,12 @@
               <div
                 class=" justify-center text-h6 text-center yellow--text"
               >
-                <vue-aos animation-class="animate__fadeInDown animate__animated">
-                  {{ photo.subtitle }}
-                </vue-aos>
+                {{ photo.subtitle }}
               </div>
               <br>
 
               <div class="justify-center text-h3 text-center">
-                <vue-aos animation-class="animate__fadeIn animate__animated">
-                  {{ photo.title }}
-                </vue-aos>
+                {{ photo.title }}
               </div>
               <v-btn
                 class="mt-10 black--text"
