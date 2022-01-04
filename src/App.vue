@@ -57,7 +57,7 @@
           </v-list>
 
           <v-list
-            v-vue-aos="{animationClass:'animate__fadeInDown animate__animated'}"
+            v-vue-aos="{animationClass:'animate__fadeInUp animate__animated'}"
             class=" grey darken-3 col-sm-6 col-md-5 col-lg-3 col-xl-4"
           >
             <v-subheader class=" text-uppercase font-weight-bold text-h6">
@@ -138,11 +138,9 @@
 
                 <v-hover v-slot="{hover}">
                   <v-btn
-                    :class="{'scale': hover}"
-                    height="75px"
-                    width="150px"
                     class="text-uppercase  white--text font-weight-bold"
-                    outlined
+                    :outlined="!hover"
+                    color="orange accent-2"
                   >
                     book now
                   </v-btn>
@@ -173,9 +171,6 @@
                 </v-list-item>
 
                 <v-btn
-
-                  height="75px"
-                  width="150px"
                   class="mt-14 text-uppercase black--text orange accent-2 font-weight-bold"
                 >
                   get in touch
@@ -250,15 +245,3 @@ export default {
   },
 }
 </script>
-<style >
-.scale .v-btn__content{
-color: #151515;
-background-color: #ffdb73;
-}
-
-.scalee .v-btn__content{
-color: #ffffff;
-background-color: #151515;
-}
-
-</style>
