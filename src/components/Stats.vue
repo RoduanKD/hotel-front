@@ -172,15 +172,12 @@ export default {
     const self = this
     this.axios.get('/rooms').then(function (res) {
       self.roomsCount = res.data.meta.total
-      console.log(self.roomsCount)
     })
     this.axios.get('/room-types').then(function (ress) {
       self.type = ress.data.data.roomTypes.length
-      console.log(self.type)
     })
     this.axios.get('/reviews/stats').then(function (rese) {
       self.review = rese.data['Rates count']
-      console.log(self.review)
     })
   },
 }
