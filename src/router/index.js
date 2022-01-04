@@ -27,6 +27,14 @@ const routes = [
     name: 'Login',
     component: () => import(/* webpackChunkName: "login" */ '../views/Login.vue'),
   },
+  {
+    path: '/review',
+    name: 'Review',
+    component: () => import(/* webpackChunkName: "Review" */'../views/Review.vue'),
+    meta: {
+      auth: true,
+    },
+  }
 ]
 
 const router = new VueRouter({
