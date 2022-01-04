@@ -259,6 +259,8 @@
                   required
                   class="text"
                   color="warning"
+                  :error-messages="errors.room_id"
+                  @click="dialog = !dialog"
                 />
               </v-col>
             </v-row>
@@ -425,7 +427,7 @@ export default {
     reserve () {
       const self = this
       const payload = {
-        firstname: this.firstname,
+        name: this.firstname,
         national_id: this.national_id,
         country: this.country,
         phone_number: this.phoneNumber,
