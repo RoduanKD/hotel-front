@@ -16,7 +16,7 @@ const routes = [
     // },
   },
   {
-    path: '/roomservices',
+    path: '/about',
     name: 'About',
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
