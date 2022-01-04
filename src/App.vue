@@ -2,12 +2,11 @@
   <v-app>
     <!-- app-bar -->
     <v-app-bar
-      absolute
+      sticky
       class="white text-center "
       shrink-on-scroll
       prominent
       height="30px"
-      scroll-target="#scrolling-techniques-3"
       app
     >
       <v-spacer />

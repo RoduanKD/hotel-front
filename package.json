@@ -10,9 +10,9 @@
   "dependencies": {
     "animate.css": "^4.1.1",
     "axios": "^0.24.0",
-    "core-js": "^3.6.5",
+    "core-js": "^3.20.2",
     "register-service-worker": "^1.7.1",
-    "swiper": "^7.4.1",
+    "vee-validate": "^3.0.0",
     "vue": "^2.6.11",
     "vue-aos": "^2.3.0",
     "vue-axios": "^3.4.0",
