@@ -72,7 +72,7 @@ export default {
   },
   created () {
     const self = this
-    this.axios.get('http://hotel.webmyidea.com/api/v1/reviews').then(function (res) {
+    this.axios.get('/reviews').then(function (res) {
       self.reviews = res.data.data
     })
   },
