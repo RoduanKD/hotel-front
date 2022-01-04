@@ -34,7 +34,7 @@ const routes = [
     meta: {
       auth: true,
     },
-  }
+  },
 ]
 
 const router = new VueRouter({
