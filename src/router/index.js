@@ -41,12 +41,12 @@ const routes = [
   {
     path: '/reservation',
     name: 'Reservation',
-    component: () => import(/* webpackChunkName: "reservation" */ '../views/reservation.vue'),
+    component: () => import(/* webpackChunkName: "reservation" */ '../views/Reservation.vue'),
   },
   {
     path: '/room-service-requests',
     name: 'RoomServiceRequests',
-    component: () => import(/* webpackChunckName: "room-service-requests") */ '../views/RoomServiceRequests.vue'),
+    component: () => import(/* webpackChunckName: "room-service-requests") */ '../views/RoomServiceRequest.vue'),
     meta: {
       auth: true,
     },
