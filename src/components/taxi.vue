@@ -30,6 +30,7 @@
               >
                 <v-hover v-slot="{hover}">
                   <v-img
+                    v-vue-aos="{animationClass:'animate__fadeInDown animate__animated'}"
                     :src="item.src"
                     height="150"
                     class="text-right pa-2"

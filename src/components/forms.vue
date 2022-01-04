@@ -16,12 +16,13 @@
       >
         <v-form
           ref="form"
+          v-vue-aos="{animationClass:'animate__animate__fadeInDown animate__animated'}"
           lazy-validation
         >
           <v-select
             style="width: 400px; color: #ffbc00"
             :items="rooms"
-            item-text=""
+            item-text="id"
             label="Enter your room number please"
           />
           <v-select
@@ -92,9 +93,7 @@ export default {
   mounted () {
     const self = this
     this.axios.get('/rooms').then(res => {
-      for (var i = 0; i < res.data.data.length; i++) {
-        self.rooms[i] = res.data.data[i].id
-      }
+      self.rooms = res.data.data
     })
   },
   methods: {

@@ -15,7 +15,7 @@
       <v-container class="pa-1">
         <v-item-group
           v-model="$store.state.food"
-          v-vue-aos="{animationClass:'animate__fadeInRight animate__animated'}"
+          v-vue-aos="{animationClass:'animate__fadeInDown animate__animated'}"
           multiple
         >
           <v-row>
