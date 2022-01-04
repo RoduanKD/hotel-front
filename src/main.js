@@ -6,13 +6,16 @@ import './registerServiceWorker'
 import vuetify from './plugins/vuetify'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
+import 'animate.css'
+import * as VueAos from 'vue-aos'
 
 Vue.config.productionTip = false
 Vue.use(VueAxios, axios)
+Vue.use(VueAos)
 
 new Vue({
   router,
   store,
   vuetify,
-  render: h => h(App),
+  render: (h) => h(App),
 }).$mount('#app')
