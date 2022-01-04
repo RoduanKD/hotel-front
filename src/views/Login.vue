@@ -4,11 +4,8 @@
       <v-row>
         <v-col>
           <v-card
-
             v-vue-aos="{ animationClass: 'animate__fadeInRight animate__animated' }"
-
             class=" my-8 py-8 background"
-
             elevation="5"
             shaped
           >
@@ -25,6 +22,26 @@
               >
                 <validation-provider
                   v-slot="{ errors }"
+                  name="phoneNumber"
+                  :rules="{
+                    required: true,
+                    regex: '^(\\+9639)'
+                  }"
+                >
+                  <v-text-field
+                    v-model="phoneNumber"
+                    class="mx-12"
+                    color="#000000"
+
+                    :counter="13"
+                    :error-messages="errors"
+                    label="Phone Number"
+                    required
+                  />
+                </validation-provider>
+
+                <validation-provider
+                  v-slot="{ errors }"
                   name="password"
                   rules="required"
                 >
@@ -36,27 +53,6 @@
 
                     :error-messages="errors"
                     label="Password"
-                    required
-                  />
-                </validation-provider>
-
-                <validation-provider
-                  v-slot="{ errors }"
-                  name="phoneNumber"
-                  :rules="{
-                    required: true,
-                    digits: 10,
-                    regex: '^(09)'
-                  }"
-                >
-                  <v-text-field
-                    v-model="phoneNumber"
-                    class="mx-12"
-                    color="#000000"
-
-                    :counter="10"
-                    :error-messages="errors"
-                    label="Phone Number"
                     required
                   />
                 </validation-provider>
@@ -117,16 +113,10 @@
   </div>
 </template>
 <script>
-import { required, digits, regex } from 'vee-validate/dist/rules'
+import { required, regex } from 'vee-validate/dist/rules'
 import { extend, ValidationObserver, ValidationProvider, setInteractionMode } from 'vee-validate'
 
 setInteractionMode('eager')
-
-extend('digits', {
-  ...digits,
-  message: '{_field_} needs to be {length} digits. ({_value_})',
-
-})
 
 extend('required', {
   ...required,
@@ -159,13 +149,11 @@ export default {
       }
       const self = this
 
-      console.log(self.$store.state)
       this.axios.post('/login', payload).then(res => {
-        console.log(res.data)
         if (res.data.message === 'login was successful') {
-          alert('Welcome to our Hotel')
           localStorage.setItem('token', res.data.data.token)
           self.$store.state.token = res.data.data.token
+          self.$router.push('/')
         } else {
           this.dialog = true
         }
