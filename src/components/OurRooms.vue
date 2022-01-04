@@ -80,7 +80,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .box{
   height: 40px;
   width: 60px;

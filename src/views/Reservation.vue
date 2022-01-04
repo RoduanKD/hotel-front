@@ -449,7 +449,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .reservation-form{
    zoom: 80%;
    font-family: Roboto;

@@ -78,7 +78,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .scale .v-image__image{
   transform: scale(1.2);
   transition: transform 1s;
