@@ -51,7 +51,8 @@
                 >
                   <v-btn
                     x-large
-                    color="yellow darken-1 "
+                    color="yellow darken-1"
+                    :to="{name: 'Reservation'}"
                   >
                     BOOK NOW
                   </v-btn>
