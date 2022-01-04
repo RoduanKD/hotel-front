@@ -103,14 +103,17 @@ export default {
       this.mutations++
     },
     send () {
+      const self = this
+
       const items = {
         name: this.name,
         job_title: this.job_title,
-        rate: this.rate,
+        rate: this.rating,
         message: this.message,
       }
+
       this.axios.post('/reviews', items).then(res => {
-        console.log(res.data)
+        self.$router.push('/')
       })
     },
   },
