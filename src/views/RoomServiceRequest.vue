@@ -1,10 +1,10 @@
 <template>
   <div>
-    <hero-room-service />
-    <foods />
-    <drinks />
-    <taxi />
-    <forms />
+    <HeroRoomService />
+    <Foods />
+    <Drinks />
+    <Taxi />
+    <Forms />
   </div>
 </template>
 
