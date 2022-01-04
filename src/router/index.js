@@ -28,6 +28,14 @@ const routes = [
     component: () => import(/* webpackChunkName: "login" */ '../views/Login.vue'),
   },
   {
+    path: '/review',
+    name: 'Review',
+    component: () => import(/* webpackChunkName: "Review" */'../views/Review.vue'),
+    meta: {
+      auth: true,
+    },
+  },
+  {
     path: '/contact',
     name: 'contact',
     component: () => import(/* webpackChunkName: "contact" */ '../views/contact.vue'),

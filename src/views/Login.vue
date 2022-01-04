@@ -153,7 +153,7 @@ export default {
         if (res.data.message === 'login was successful') {
           localStorage.setItem('token', res.data.data.token)
           self.$store.state.token = res.data.data.token
-          self.$router.push('/')
+          window.location = '/'
         } else {
           this.dialog = true
         }
@@ -182,7 +182,7 @@ export default {
 }
 .cover{
   width: 100%;
-  height: 100%;
+  height: 100vh;
   background-image: url(https://images.unsplash.com/photo-1586966145732-8b681e97c682?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDR8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60);
 background-size: cover;
 }
