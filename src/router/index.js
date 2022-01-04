@@ -1,5 +1,4 @@
-// import store from '@/store'
-
+import store from '@/store'
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
@@ -8,12 +7,9 @@ Vue.use(VueRouter)
 
 const routes = [
   {
-    path: '/roomservices',
+    path: '/',
     name: 'Home',
     component: Home,
-    // meta: {
-    //   auth: true,
-    // },
   },
   {
     path: '/about',
@@ -23,6 +19,14 @@ const routes = [
     // which is lazy-loaded when the route is visited.
     component: () => import(/* webpackChunkName: "about" */ '../views/About.vue'),
   },
+  {
+    path: '/room-service-requests',
+    name: 'RoomServiceRequests',
+    component: () => import(/* webpackChunckName: "room-service-requests") */ '../views/RoomServiceRequests.vue'),
+    meta: {
+      auth: true,
+    },
+  },
 ]
 
 const router = new VueRouter({
@@ -30,7 +34,7 @@ const router = new VueRouter({
   base: process.env.BASE_URL,
   routes,
 })
-// router.beforeEach((to, from, next) => {
-//   if (!store.state.token && to.meta.auth) { next('/login') } else next()
-// })
+router.beforeEach((to, from, next) => {
+  if (!store.state.token && to.meta.auth) { next('/login') } else next()
+})
 export default router
