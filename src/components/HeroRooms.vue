@@ -48,7 +48,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .v-breadcrumbs__item{
   color: #ffc107 !important;
 }

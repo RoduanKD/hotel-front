@@ -499,7 +499,7 @@
   </v-container>
 </template>
 
-<style>
+<style scoped>
 .row + .row {
     margin-top: -290px;
 }

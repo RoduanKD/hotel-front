@@ -111,7 +111,7 @@ export default {
   // },
 }
 </script>
-<style>
+<style scoped>
   @import url('https://fonts.googleapis.com/css2?family=Teko:wght@300&display=swap');
 .text-h3{
   font-family: "Teko", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
