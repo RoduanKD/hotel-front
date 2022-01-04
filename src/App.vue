@@ -338,3 +338,9 @@ export default {
   },
 }
 </script>
+
+<style>
+.v-application {
+  font-family: 'Teko' !important;
+}
+</style>
