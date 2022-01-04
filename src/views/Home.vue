@@ -15,16 +15,11 @@ import OurTeam from '@/components/OurTeam.vue'
 
 export default {
   name: 'Home',
-
   components: {
     Offers,
     Reviews,
     Gallery,
     OurTeam,
-  },
-
-  mounted () {
-    console.log(this.$store.state.message)
   },
 }
 </script>

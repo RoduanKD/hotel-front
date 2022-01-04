@@ -27,6 +27,30 @@ const routes = [
     name: 'Login',
     component: () => import(/* webpackChunkName: "login" */ '../views/Login.vue'),
   },
+  {
+    path: '/rooms',
+    name: 'Rooms',
+    component: () => import(/* webpackChunkName: "rooms" */ '../views/Rooms.vue'),
+  },
+  {
+    path: '/rooms/:id',
+    name: 'Room',
+    component: () => import(/* webpackChunkName: "room" */ '../views/Room.vue'),
+    props: true,
+  },
+  {
+    path: '/reservation',
+    name: 'Reservation',
+    component: () => import(/* webpackChunkName: "reservation" */ '../views/Reservation.vue'),
+  },
+  {
+    path: '/room-service-requests',
+    name: 'RoomServiceRequests',
+    component: () => import(/* webpackChunckName: "room-service-requests") */ '../views/RoomServiceRequest.vue'),
+    meta: {
+      auth: true,
+    },
+  },
 ]
 
 const router = new VueRouter({
