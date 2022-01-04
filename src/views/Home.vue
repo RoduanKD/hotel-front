@@ -1,19 +1,20 @@
 <template>
-  <hello-world />
+  <div>
+    <stats />
+    <contact-us />
+  </div>
 </template>
 
 <script>
-import HelloWorld from '../components/HelloWorld'
+import Stats from '@/components/Stats.vue'
+import ContactUs from '@/components/ContactUs.vue'
 
 export default {
   name: 'Home',
 
   components: {
-    HelloWorld,
-  },
-
-  mounted () {
-    console.log(this.$store.state.message)
+    Stats,
+    ContactUs,
   },
 }
 </script>
