@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-
+import VuexPersistence from 'vuex-persist'
 Vue.use(Vuex)
 
 export default new Vuex.Store({
@@ -8,14 +8,13 @@ export default new Vuex.Store({
     taxes: [],
     food: [],
     drinks: [],
+    token: localStorage.getItem('token'),
   },
   mutations: {
-    // addtaxi: (state, taxi) => {
-    //   state.taxes.push(taxi)
-    // },
   },
   actions: {
   },
   modules: {
   },
+  plugins: [new VuexPersistence().plugin],
 })

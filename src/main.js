@@ -7,12 +7,14 @@ import vuetify from './plugins/vuetify'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
 import * as VueAos from 'vue-aos'
-Vue.use(VueAos)
+import 'animate.css'
+
 axios.defaults.baseURL = 'http://hotel.webmyidea.com/api/v1'
 
 Vue.config.productionTip = false
 
 Vue.use(VueAxios, axios)
+Vue.use(VueAos)
 
 new Vue({
   router,
