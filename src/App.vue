@@ -26,7 +26,7 @@
       </v-btn>
       <v-btn
         icon
-        class="mt-3 ml-16 mr-16 hidden-sm-and-down"
+        class="mt-3 ml-10 mr-16 hidden-sm-and-down"
       >
         <v-icon>mdi-phone</v-icon>
         {{ settings.hotel_phone }}
@@ -35,7 +35,7 @@
         v-slot="{ hover }"
       >
         <v-btn
-          class="text-h7 text-center d-flex.justify-end mt-3 mx-5 hidden-sm-and-down"
+          class="text-h7 text-center d-flex.justify-end mt-3 mx-4 hidden-sm-and-down"
           :color="hover ? 'yellow darken-1':'gray darken-3'"
           :outlined="!hover"
           tile
@@ -57,7 +57,7 @@
           >
             <v-btn
               v-if="$store.state.token == null"
-              class="text-h7 text-center d-flex.justify-end mt-3"
+              class="text-h7 text-center d-flex.justify-end mt-3 mr-16"
               :color="hover ? 'yellow darken-1':'gray darken-3'"
               :outlined="!hover"
               tile
