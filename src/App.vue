@@ -68,7 +68,9 @@
             <v-tab>Home</v-tab>
             <v-tab>About us</v-tab>
             <v-tab>Rooms</v-tab>
-            <v-tab @click="$router.push({name: 'RoomServiceRequests'})">
+            <v-tab
+              :to="{name: 'RoomServiceRequests'}"
+            >
               RoomServices
             </v-tab>
             <v-tab>Blog</v-tab>
