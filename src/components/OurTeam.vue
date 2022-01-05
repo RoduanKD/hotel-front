@@ -79,7 +79,7 @@ export default {
           img: 'Safaa.jpg',
         },
         {
-          name: 'Lana Rayes',
+          name: 'Lana Alrayes',
           course_title: 'Front End',
           img: 'Lana.jpg',
         },
