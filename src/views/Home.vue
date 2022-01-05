@@ -1,11 +1,11 @@
 <template>
   <div>
     <hero />
-    <RoomsTypes />
     <gallery />
+    <RoomsTypes />
     <offers />
-    <reviews />
     <our-team />
+    <reviews />
     <stats />
     <contact-us />
   </div>

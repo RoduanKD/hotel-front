@@ -1,6 +1,6 @@
 <template>
   <v-container
-    id="stats"
+    id="contactUs"
     class="my-12"
   >
     <v-card

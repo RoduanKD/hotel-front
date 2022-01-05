@@ -14,7 +14,7 @@
       src="https://livedemo00.template-help.com/wt_prod-19216/images/logo-default-197x54.png"
       @click="$router.push({name: 'Home'})"
     />
-    <v-spacer class="hidden-sm-and-down" />
+    <v-spacer />
     <v-btn
       icon
       class="mt-3 ml-16 mr-16 hidden-sm-and-down"
@@ -121,12 +121,21 @@
           color="yellow darken-1"
           class="hidden-sm-and-down"
         >
-          <v-tab>Home</v-tab>
+          <v-tab
+            :to="{name: 'Home'}"
+          >
+            Home
+          </v-tab>
           <v-tab>About us</v-tab>
-          <v-tab>Rooms</v-tab>
-          <v-tab>Blog</v-tab>
-          <v-tab>Contact Us</v-tab>
-          <v-tab>Pages</v-tab>
+          <v-tab :to="{name: 'Rooms'}">
+            Rooms
+          </v-tab>
+          <v-tab :to="{name: 'Reservation'}">
+            Reservation
+          </v-tab>
+          <v-tab :to="{name: 'contact'}">
+            Contact Us
+          </v-tab>
         </v-tabs>
       </div>
       <v-spacer />

@@ -1,5 +1,6 @@
 <template>
   <v-carousel
+    id="hero"
     vertical
     vertical-delimiters="true"
     cycle

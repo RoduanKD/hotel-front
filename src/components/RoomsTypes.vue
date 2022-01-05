@@ -1,5 +1,5 @@
 <template>
-  <v-container>
+  <v-container id="ourRooms">
     <div class="text-h2 text-center">
       Our Rooms
     </div>
@@ -67,6 +67,7 @@
                   :outlined="!hover"
                   height="50px"
                   width="150px"
+                  :to="{name: 'Rooms'}"
                 >
                   More Info
                 </v-btn>
