@@ -58,9 +58,61 @@
         </v-timeline-item>
       </v-timeline>
       <span
-        class="text-right"
+        class="text-right d-flex justify-center"
       >"This is the end of the course but it's a new beginning for a new journey.
-        Thank you"</span>
+        Thank you"</span> <br>
+      <h2 class="text-right d-flex justify-center">
+        About The Project
+      </h2>
+    </v-container>
+    <v-container>
+      <v-row class="mb-12">
+        <v-col
+          cols="12"
+          md="6"
+        >
+          <v-hover>
+            <template v-slot:default="{ hover }">
+              <v-img
+                src="https://serv5.com/wp-content/uploads/2021/09/%D8%B4%D8%B1%D9%83%D8%A9-%D8%AA%D8%B5%D9%85%D9%8A%D9%85-%D9%85%D9%88%D8%A7%D9%82%D8%B9-%D8%B3%D8%B9%D9%88%D8%AF%D9%8A%D8%A9-3.jpg"
+                height="230"
+                width="500"
+                :class="{'scale': hover}"
+                class="mx-auto pa-6"
+              />
+            </template>
+          </v-hover>
+        </v-col>
+        <v-col
+          cols="12"
+          md="6"
+        >
+          <!-- Using the elevation prop -->
+          <v-hover>
+            <template v-slot:default="{ hover }">
+              <v-card
+                :elevation="hover ? 24 : 6"
+                class="mx-auto pl-12 "
+                width="500"
+              >
+                <v-card-title class="text--primary text-h6">
+                  Our Project is about
+                </v-card-title>
+                <div class="text--primary">
+                  <ul>
+                    <li>Hotel have room page to description all rooms   .</li>
+                    <li>Hotel have reserve page online to reserve in hotel  </li>
+                    <li>Hotel have Login page  </li>
+                    <li>Hotel have room service page   </li>
+                    <li>Hotel have room review page  </li>
+                    <li>Hotel have room contact page  </li>
+                  </ul>
+                </div>
+              </v-card>
+            </template>
+          </v-hover>
+        </v-col>
+      </v-row>
     </v-container>
   </div>
 </template>
@@ -98,7 +150,8 @@ export default {
   }),
 }
 </script>
-<style>
+<style scoped>
+
 #font-size{
   font-size: 60px;
 }
@@ -107,5 +160,9 @@ span{
 }
 #description{
   font-size: 20px;
+}
+.scale .v-image{
+  transform: scale(1.2);
+  transition: transform 1s;
 }
 </style>
