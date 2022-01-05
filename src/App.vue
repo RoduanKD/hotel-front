@@ -21,8 +21,9 @@
       <v-spacer />
       <v-spacer />
       <v-btn
-        icon
         class="mt-3"
+        text
+        color="black"
       >
         <v-icon>mdi-clock-time-four-outline</v-icon>
         09:00AM — 05:00PM
@@ -31,7 +32,8 @@
       <v-spacer />
 
       <v-btn
-        icon
+        text
+        color="black"
         class="mt-3"
       >
         <v-icon>mdi-phone</v-icon>
@@ -43,7 +45,7 @@
       >
         <v-btn
           class="text-h7 text-center d-flex.justify-end mt-3"
-          :color="hover ? 'yellow darken-1':'gray darken-3'"
+          :color="hover ? 'yellow darken-1':'grey darken-3'"
           :outlined="!hover"
           tile
           height="40px"
@@ -80,9 +82,13 @@
           <v-btn
             icon
           >
-            <v-icon>mdi-facebook</v-icon>
+            <v-icon>
+              mdi-facebook
+            </v-icon>
           </v-btn>
-          <v-btn icon>
+          <v-btn
+            icon
+          >
             <v-icon>mdi-twitter</v-icon>
           </v-btn>
           <v-btn icon>
@@ -90,6 +96,14 @@
           </v-btn>
           <v-btn icon>
             <v-icon>mdi-instagram</v-icon>
+          </v-btn>
+          <v-btn @click="$vuetify.theme.dark=!$vuetify.theme.dark">
+            <v-icon v-if="!$vuetify.theme.dark">
+              mdi-weather-night
+            </v-icon>
+            <v-icon v-else>
+              mdi-white-balance-sunny
+            </v-icon>
           </v-btn>
         </div>
         <v-spacer />
@@ -343,4 +357,5 @@ export default {
 .v-application {
   font-family: 'Teko' !important;
 }
+
 </style>
