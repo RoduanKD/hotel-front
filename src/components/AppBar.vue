@@ -128,7 +128,9 @@
           >
             Home
           </v-tab>
-          <v-tab>About us</v-tab>
+          <v-tab :to="{name: 'About'}">
+            About us
+          </v-tab>
           <v-tab :to="{name: 'Rooms'}">
             Rooms
           </v-tab>
