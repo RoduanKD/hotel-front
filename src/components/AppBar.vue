@@ -15,20 +15,22 @@
       @click="$router.push({name: 'Home'})"
     />
     <v-spacer />
-    <v-btn
-      icon
-      class="mt-3 ml-16 mr-16 hidden-sm-and-down"
+    <span
+      class="mt-3 ml-16 mr-5 hidden-sm-and-down"
     >
-      <v-icon>mdi-clock-time-four-outline</v-icon>
+      <v-icon color="yellow darken-1 ">
+        mdi-clock-time-four-outline
+      </v-icon>
       09:00AM — 05:00PM
-    </v-btn>
-    <v-btn
-      icon
-      class="mt-3 ml-10 mr-16 hidden-sm-and-down"
+    </span>
+    <span
+      class="mt-3 ml-10 mr-5 hidden-sm-and-down"
     >
-      <v-icon>mdi-phone</v-icon>
+      <v-icon color="yellow darken-1 ">
+        mdi-phone
+      </v-icon>
       {{ settings.hotel_phone }}
-    </v-btn>
+    </span>
     <v-hover
       v-slot="{ hover }"
     >

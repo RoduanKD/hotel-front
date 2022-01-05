@@ -23,16 +23,21 @@
           >
             <v-container class="justify-center text-center">
               <div
+                v-vue-aos="{animationClass:'animate__slideInUp animate__animated'}"
                 class=" justify-center text-h6 text-center yellow--text"
               >
                 {{ photo.subtitle }}
               </div>
               <br>
 
-              <div class="justify-center text-h3 text-center">
+              <div
+                v-vue-aos="{animationClass:'animate__slideInUp animate__animated'}"
+                class="justify-center text-h3 text-center"
+              >
                 {{ photo.title }}
               </div>
               <v-btn
+                v-vue-aos="{animationClass:'animate__slideInDown animate__animated'}"
                 class="mt-10 black--text"
                 color="yellow darken-1"
                 tile

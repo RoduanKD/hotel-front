@@ -1,12 +1,16 @@
 <template>
   <v-container id="ourRooms">
-    <div class="text-h2 text-center">
+    <div
+      v-vue-aos="{animationClass:'animate__fadeInRight animate__animated'}"
+      class="text-h2 text-center"
+    >
       Our Rooms
     </div>
 
     <v-card
       v-for="(room, i) in rooms"
       :key="room.id"
+      v-vue-aos="{animationClass:'animate__slideInLeft animate__animated'}"
       class="mt-12 pa-0"
       outlined
       tile
