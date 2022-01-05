@@ -68,6 +68,9 @@
             <v-tab>Home</v-tab>
             <v-tab>About us</v-tab>
             <v-tab>Rooms</v-tab>
+            <v-tab :to="{name: 'RoomServiceRequests'}">
+              RoomServices
+            </v-tab>
             <v-tab>Blog</v-tab>
             <v-tab>Contact Us</v-tab>
             <v-tab>Pages</v-tab>
