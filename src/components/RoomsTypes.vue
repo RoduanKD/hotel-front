@@ -7,80 +7,86 @@
       Our Rooms
     </div>
 
-    <v-card
-      v-for="(room, i) in rooms"
-      :key="room.id"
-      v-vue-aos="{animationClass:'animate__slideInLeft animate__animated'}"
-      class="mt-12 pa-0"
-      outlined
-      tile
-    >
-      <v-row>
-        <v-col>
-          <v-hover
-            v-slot="{ hover }"
-          >
-            <v-img
-              width="500"
-              height="300"
-              :src="photos[i % photos.length].src"
-              :class="{'scale':hover}"
-            />
-          </v-hover>
-        </v-col>
-        <v-col>
-          <v-card-title>
-            {{ photos[i % photos.length].type }}
-          </v-card-title>
-          <v-card-text>
-            <v-row
-              align="center"
-              class="mx-0"
-            >
-              <v-rating
-                :value="5"
-                color="amber"
-                dense
-                half-increments
-                readonly
-                size="14"
-              />
-
-              <div class="grey--text ms-4">
-                4 customers reviews
-              </div>
-              <div
-                class="text-h7 mt-5"
-              >
-                {{ room.description }}
-                {{ room.description }}
-                {{ room.description }}
-                <br>
-                <b>beds:</b> {{ room.beds }}
-                <br>
-                <b>status:</b> {{ room.status }}
-                <br>
-                <b>price:</b> {{ room.price }}
-              </div>
+    <v-row justify="center">
+      <v-col
+        cols="12"
+        xl="7"
+      >
+        <v-card
+          v-for="(room, i) in rooms"
+          :key="room.id"
+          v-vue-aos="{animationClass:'animate__slideInLeft animate__animated'}"
+          class="mt-12 pa-0"
+          outlined
+          tile
+        >
+          <v-row>
+            <v-col>
               <v-hover
                 v-slot="{ hover }"
               >
-                <v-btn
-                  class="text-h7 mt-7 "
-                  :color="hover ? 'yellow darken-1':'gray darken-3'"
-                  :outlined="!hover"
-                  height="50px"
-                  width="150px"
-                  :to="{name: 'Rooms'}"
-                >
-                  More Info
-                </v-btn>
+                <v-img
+                  width="500"
+                  height="300"
+                  :src="photos[i % photos.length].src"
+                  :class="{'scale':hover}"
+                />
               </v-hover>
-            </v-row>
-          </v-card-text>
-        </v-col>
-      </v-row>
-    </v-card>
+            </v-col>
+            <v-col>
+              <v-card-title>
+                {{ photos[i % photos.length].type }}
+              </v-card-title>
+              <v-card-text>
+                <v-row
+                  align="center"
+                  class="mx-0"
+                >
+                  <v-rating
+                    :value="5"
+                    color="amber"
+                    dense
+                    half-increments
+                    readonly
+                    size="14"
+                  />
+                  <div class="grey--text ms-4">
+                    4 customers reviews
+                  </div>
+                  <div
+                    class="text-h7 mt-5"
+                  >
+                    {{ room.description }}
+                    {{ room.description }}
+                    {{ room.description }}
+                    <br>
+                    <b>beds:</b> {{ room.beds }}
+                    <br>
+                    <b>status:</b> {{ room.status }}
+                    <br>
+                    <b>price:</b> {{ room.price }}
+                  </div>
+                  <v-hover
+                    v-slot="{ hover }"
+                  >
+                    <v-btn
+                      class="text-h7 mt-7 "
+                      :color="hover ? 'yellow darken-1':'gray darken-3'"
+                      :outlined="!hover"
+                      height="50px"
+                      width="150px"
+                      :to="{name: 'Rooms'}"
+                    >
+                      More Info
+                    </v-btn>
+                  </v-hover>
+                </v-row>
+              </v-card-text>
+            </v-col>
+          </v-row>
+        </v-card>
+      </v-col>
+    </v-row>
   </v-container>
 </template>
 

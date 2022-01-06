@@ -1,7 +1,7 @@
 <template>
   <v-container
     id="gallery"
-    class="my-12"
+    class="mb-12"
   >
     <v-row class="my-12">
       <v-col cols="12">
