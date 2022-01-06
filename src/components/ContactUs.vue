@@ -5,7 +5,6 @@
   >
     <v-card
       class="pa-4 my-8"
-      cols="12"
       flat
       height="300px"
       img="https://cdn.vuetifyjs.com/images/toolbar/map.jpg"
@@ -33,8 +32,6 @@
     <v-row
       v-vue-aos="{animationClass:'animate__fadeInLeft animate__animated'}"
       justify="center"
-      cols="12"
-      md="3"
     >
       <v-card
         cols="12"
