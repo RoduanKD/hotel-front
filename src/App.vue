@@ -97,7 +97,10 @@
           <v-btn icon>
             <v-icon>mdi-instagram</v-icon>
           </v-btn>
-          <v-btn @click="$vuetify.theme.dark=!$vuetify.theme.dark">
+          <v-btn
+            icon
+            @click="$vuetify.theme.dark=!$vuetify.theme.dark"
+          >
             <v-icon v-if="!$vuetify.theme.dark">
               mdi-weather-night
             </v-icon>
