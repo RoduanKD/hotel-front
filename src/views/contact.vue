@@ -11,7 +11,10 @@
     <v-container>
       <v-row>
         <v-col
-          cols="6"
+          cols="12"
+          md="4"
+          offset="0"
+          offset-md="1"
         >
           <h1 v-vue-aos="{animationClass:'animate__fadeInLeft animate__animated'}">
             Get In Touch
@@ -33,7 +36,7 @@
               v-model="firstname"
               v-vue-aos="{animationClass:'animate__fadeInLeft animate__animated'}"
               :rules="nameRules"
-              :counter="10"
+              :counter="40"
               label="Title"
               required
               :error-messages="errors.title"
@@ -59,6 +62,7 @@
               :items="items"
               label="select"
               :error-messages="errors.type"
+              :rules="selectRules"
             />
             <!-- </v-col> -->
             <!-- <v-col -->
@@ -225,6 +229,10 @@
 <script>
 export default {
   data: () => ({
+    selectRules: [
+      v => !!v || 'Select is required',
+
+    ],
     items: ['Question', 'Thanks', 'complain'],
     text: 'welcome to our hotel',
     snackbar: false,
@@ -239,7 +247,7 @@ export default {
     lastname: '',
     nameRules: [
       v => !!v || 'Name is required',
-      v => v.length <= 10 || 'Name must be less than 10 characters',
+      v => v.length <= 40 || 'Name must be less than 40 characters',
     ],
     email: '',
     emailRules: [
