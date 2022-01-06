@@ -36,7 +36,7 @@
               v-model="firstname"
               v-vue-aos="{animationClass:'animate__fadeInLeft animate__animated'}"
               :rules="nameRules"
-              :counter="20"
+              :counter="40"
               label="Title"
               required
               :error-messages="errors.title"
@@ -247,7 +247,7 @@ export default {
     lastname: '',
     nameRules: [
       v => !!v || 'Name is required',
-      v => v.length <= 20 || 'Name must be less than 20 characters',
+      v => v.length <= 40 || 'Name must be less than 40 characters',
     ],
     email: '',
     emailRules: [
