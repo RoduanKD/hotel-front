@@ -1,11 +1,20 @@
 <template>
   <div class="cover">
-    <v-container>
-      <v-row>
-        <v-col>
+    <v-container class="fill-height">
+      <v-row
+        justify="center"
+        class="fill-height"
+      >
+        <v-col
+          cols="12"
+          md="4"
+          xl="3"
+        >
           <v-card
             v-vue-aos="{ animationClass: 'animate__fadeInRight animate__animated' }"
-            class=" my-8 py-8 background"
+            width="500"
+            height="500"
+            class=" background"
             elevation="5"
             shaped
           >
@@ -171,12 +180,13 @@ export default {
 </script>
 <style>
 .background{
-  position: fixed;
-    width: 500px;
-    height: 500px;
+  position: relative;
+    /* width: 500px;
+    height: 500px; */
+    transform: translate(-50%,-50%);
 
-    top: calc(50% - 250px);
-    left: calc(50% - 250px);
+    top:50%;
+    left:50%;
     opacity: 0.9;
 
 }
