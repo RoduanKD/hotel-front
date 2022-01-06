@@ -157,6 +157,17 @@
             {{ icon }}
           </v-icon>
         </v-btn>
+        <v-btn
+          icon
+          @click="$vuetify.theme.dark=!$vuetify.theme.dark"
+        >
+          <v-icon v-if="!$vuetify.theme.dark">
+            mdi-weather-night
+          </v-icon>
+          <v-icon v-else>
+            mdi-white-balance-sunny
+          </v-icon>
+        </v-btn>
       </div>
       <v-spacer />
     </template>

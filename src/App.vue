@@ -316,4 +316,5 @@ export default {
 .v-application {
   font-family: 'Teko' !important;
 }
+
 </style>
