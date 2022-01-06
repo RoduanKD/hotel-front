@@ -1,5 +1,8 @@
 <template>
-  <v-container class="my-12">
+  <v-container
+    id="gallery"
+    class="my-12"
+  >
     <v-row class="my-12">
       <v-col cols="12">
         <div
