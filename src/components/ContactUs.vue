@@ -29,7 +29,10 @@
       </v-toolbar>
     </v-card>
 
-    <v-row v-vue-aos="{animationClass:'animate__fadeInLeft animate__animated'}">
+    <v-row
+      v-vue-aos="{animationClass:'animate__fadeInLeft animate__animated'}"
+      justify="center"
+    >
       <v-card
         cols="4"
         class="mx-4"
