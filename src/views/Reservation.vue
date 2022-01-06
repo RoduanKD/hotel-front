@@ -5,153 +5,156 @@
       src="https://www.swissotel.com/assets/0/92/2119/4011/4029/4031/6442451752/2e5873d6-6058-4491-b69a-a11c1e9bdc15.jpg"
       width="100%"
       height="750 "
-    />
-    <v-col
-      md="4"
-      lg="12"
     >
-      <span
-        class="title1 text-h2"
+      <v-col
+        cols="12"
       >
-        Reservation Section
-      </span>
-    </v-col>
-    <v-col>
-      <v-btn
-        elevation="2"
-        large
-        tile
-        class="booknow"
-        target="_blank"
-        color="#FFCE40"
-        @click="$vuetify.goTo('#myForm')"
-      >
-        Reserve Now
-      </v-btn>
-    </v-col>
-    <!-- Dialog Choose-Room (2) -->
-    <v-spacer />
-    <v-col>
-      <v-dialog
-        v-model="dialog"
-        fullscreen
-        hide-overlay
-        transition="dialog-bottom-transition"
-      >
-        <template v-slot:activator="{ on, attrs }">
-          <v-col
-            md="12"
-            lg="4"
-          >
-            <v-btn
-              elevation="2"
-              large
-              tile
-              class="booknow1"
-              target="_blank"
-              color="#FFCE40"
-              v-bind="attrs"
-              v-on="on"
-            >
-              Choose Room
-            </v-btn>
-          </v-col>
-        </template>
-        <v-card>
-          <v-toolbar
+        <span
+          class="title1 text-h2 mt-16"
+        >
+          Reservation Section
+        </span>
+      </v-col>
+      <v-container>
+        <v-col
+          cols="6"
+        >
+          <v-btn
+            elevation="2"
+            large
+            tile
+            class="booknow"
+            target="_blank"
             color="#FFCE40"
+            @click="$vuetify.goTo('#myForm')"
           >
-            <v-btn
-              icon
-              @click="dialog = false"
-            >
-              <v-icon>mdi-close</v-icon>
-            </v-btn>
-            <v-toolbar-title>Choose Room</v-toolbar-title>
-            <v-spacer />
-            <v-toolbar-items />
-          </v-toolbar>
-          <v-list
-            three-line
-            subheader
+            Reserve Now
+          </v-btn>
+        </v-col>
+        <!-- Dialog Choose-Room (2) -->
+        <v-col
+          cols="6"
+        >
+          <v-dialog
+            v-model="dialog"
+            fullscreen
+            hide-overlay
+            transition="dialog-bottom-transition"
           >
-            <v-list-item>
-              <v-list-item-content>
-                <v-row align="center">
-                  <!-- Cards (3) -->
-                  <v-col
-                    v-for="(card, i) in cards"
-                    :key="card.id"
-                    lg="4"
-                    md="12"
-                  >
-                    <v-hover
-                      v-slot="{ hover }"
-                    >
-                      <v-card
-                        :loading="loading"
-                        class="mx-auto my-12"
-                        :elevation="hover ? 12 : 2"
-                        :class="{ 'on-hover': hover }"
-                        max-width="374"
+            <template v-slot:activator="{ on, attrs }">
+              <v-col
+                cols="6"
+              >
+                <v-btn
+                  elevation="2"
+                  large
+                  tile
+                  class="booknow1"
+                  target="_blank"
+                  color="#FFCE40"
+                  v-bind="attrs"
+                  v-on="on"
+                >
+                  Choose Room
+                </v-btn>
+              </v-col>
+            </template>
+            <v-card>
+              <v-toolbar
+                color="#FFCE40"
+              >
+                <v-btn
+                  icon
+                  @click="dialog = false"
+                >
+                  <v-icon>mdi-close</v-icon>
+                </v-btn>
+                <v-toolbar-title>Choose Room</v-toolbar-title>
+                <v-spacer />
+                <v-toolbar-items />
+              </v-toolbar>
+              <v-list
+                three-line
+                subheader
+              >
+                <v-list-item>
+                  <v-list-item-content>
+                    <v-row align="center">
+                      <!-- Cards (3) -->
+                      <v-col
+                        v-for="(card, i) in cards"
+                        :key="card.id"
+                        lg="4"
+                        md="12"
                       >
-                        <template slot="progress">
-                          <v-progress-linear
-                            color="#FFCE40"
-                            height="10"
-                            indeterminate
-                          />
-                        </template>
-                        <v-img
-                          height="250"
-                          :src="images[i % images.length]"
-                          justify="center"
-                          align="center"
+                        <v-hover
+                          v-slot="{ hover }"
                         >
-                          <v-expand-transition>
-                            <div
-                              v-if="hover"
-                              class="d-flex transition-fast-in-fast-out yellow darken-2 v-card--reveal display-3 white--text justify-center align-center"
-                              style="height: 100%;"
-                            >
-                              <v-checkbox
-                                v-model="roomId"
-                                label="Choose"
-                                :value="card.id"
-                                color="black"
+                          <v-card
+                            :loading="loading"
+                            class="mx-auto my-12"
+                            :elevation="hover ? 12 : 2"
+                            :class="{ 'on-hover': hover }"
+                            max-width="374"
+                          >
+                            <template slot="progress">
+                              <v-progress-linear
+                                color="#FFCE40"
+                                height="10"
+                                indeterminate
                               />
-                            </div>
-                          </v-expand-transition>
-                        </v-img>
-                        <v-card-title>Room In Hotel</v-card-title>
-                        <v-card-text>
-                          <v-row
-                            align="center"
-                            class="mx-0"
-                          />
-                          <div class="my-4 text-subtitle-1">
-                            Price is :  {{ card.price }} $
-                          </div>
-                          <div>{{ card.description }}</div>
-                        </v-card-text>
-                        <v-divider class="mx-4" />
-                        <v-card-subtitle>Availblity :{{ card.status }}</v-card-subtitle>
-                        <v-card-subtitle>  Beds : {{ card.beds }}</v-card-subtitle>
-                        <v-card-subtitle> Story: {{ card.story }}</v-card-subtitle>
-                        <v-card-actions>
-                          <v-spacer />
-                        </v-card-actions>
-                      </v-card>
-                    </v-hover>
-                  </v-col>
-                </v-row>
-              </v-list-item-content>
-            </v-list-item>
-          </v-list>
-          <!-- </v-card> -->
-        </v-card>
-      </v-dialog>
-    </v-col>
+                            </template>
+                            <v-img
+                              height="250"
+                              :src="images[i % images.length]"
+                              justify="center"
+                              align="center"
+                            >
+                              <v-expand-transition>
+                                <div
+                                  v-if="hover"
+                                  class="d-flex transition-fast-in-fast-out yellow darken-2 v-card--reveal display-3 white--text justify-center align-center"
+                                  style="height: 100%;"
+                                >
+                                  <v-checkbox
+                                    v-model="roomId"
+                                    label="Choose"
+                                    :value="card.id"
+                                    color="black"
+                                  />
+                                </div>
+                              </v-expand-transition>
+                            </v-img>
+                            <v-card-title>Room In Hotel</v-card-title>
+                            <v-card-text>
+                              <v-row
+                                align="center"
+                                class="mx-0"
+                              />
+                              <div class="my-4 text-subtitle-1">
+                                Price is :  {{ card.price }} $
+                              </div>
+                              <div>{{ card.description }}</div>
+                            </v-card-text>
+                            <v-divider class="mx-4" />
+                            <v-card-subtitle>Availblity :{{ card.status }}</v-card-subtitle>
+                            <v-card-subtitle>  Beds : {{ card.beds }}</v-card-subtitle>
+                            <v-card-subtitle> Story: {{ card.story }}</v-card-subtitle>
+                            <v-card-actions>
+                              <v-spacer />
+                            </v-card-actions>
+                          </v-card>
+                        </v-hover>
+                      </v-col>
+                    </v-row>
+                  </v-list-item-content>
+                </v-list-item>
+              </v-list>
+            </v-card>
+          </v-dialog>
+        </v-col>
+      </v-container>
+    </v-img>
 
     <!-- Reservation Form -->
     <v-container
@@ -259,8 +262,6 @@
                   required
                   class="text"
                   color="warning"
-                  :error-messages="errors.room_id"
-                  @click="dialog = !dialog"
                 />
               </v-col>
             </v-row>
@@ -427,7 +428,7 @@ export default {
     reserve () {
       const self = this
       const payload = {
-        name: this.firstname,
+        firstname: this.firstname,
         national_id: this.national_id,
         country: this.country,
         phone_number: this.phoneNumber,
@@ -449,7 +450,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
 .reservation-form{
    zoom: 80%;
    font-family: Roboto;
@@ -478,19 +479,19 @@ export default {
   position: absolute;
   color: white;
   font-weight: bold;
-  top:20%;
+  top:25%;
   left: 50%;
   transform: translate(-50%,-50%);
 }
 .booknow{
   position: absolute;
-  bottom: 70%;
+  bottom: 50%;
   left: 40%;
   transform: translate(-50%,-50%);
 }
 .booknow1{
   position: absolute;
-  bottom: 70%;
+  bottom: 50%;
   left: 60%;
   transform: translate(-50%,-50%);
 }
