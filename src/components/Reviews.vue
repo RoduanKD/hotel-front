@@ -1,5 +1,5 @@
 <template>
-  <v-container>
+  <v-container id="reviews">
     <v-row class="my-12">
       <v-col cols="12">
         <div

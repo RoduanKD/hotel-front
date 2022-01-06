@@ -1,9 +1,11 @@
 
 <template>
   <v-carousel
+    id="offers"
     hide-delimiters
     cycle
     show-arrows-on-hover
+    class="mt-16"
   >
     <v-carousel-item
       v-for="(offer,i) in offers"

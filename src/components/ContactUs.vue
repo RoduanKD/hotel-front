@@ -29,9 +29,13 @@
       </v-toolbar>
     </v-card>
 
-    <v-row v-vue-aos="{animationClass:'animate__fadeInLeft animate__animated'}">
+    <v-row
+      v-vue-aos="{animationClass:'animate__fadeInLeft animate__animated'}"
+      justify="center"
+    >
       <v-card
-        cols="4"
+        cols="12"
+        md="3"
         class="mx-4"
       >
         <v-hover
@@ -69,7 +73,8 @@
         </v-hover>
       </v-card>
       <v-card
-        cols="4"
+        cols="12"
+        md="3"
         class="mx-4"
       >
         <v-hover
@@ -107,7 +112,8 @@
         </v-hover>
       </v-card>
       <v-card
-        cols="4"
+        cols="12"
+        md="3"
         class="mx-4"
       >
         <v-hover
@@ -176,7 +182,3 @@ export default {
 }
 
 </script>
-
-<style>
-
-</style>

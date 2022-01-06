@@ -1,5 +1,5 @@
 <template>
-  <v-container>
+  <v-container id="ourTeam">
     <v-row
       class="my-12"
       justify="center"
@@ -79,7 +79,7 @@ export default {
           img: 'Safaa.jpg',
         },
         {
-          name: 'Lana Rayes',
+          name: 'Lana Alrayes',
           course_title: 'Front End',
           img: 'Lana.jpg',
         },
