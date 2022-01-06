@@ -1,10 +1,14 @@
 <template>
   <div class="cover">
-    <v-container>
-      <v-row>
+    <v-container class="fill-height">
+      <v-row
+        justify="center"
+        class="fill-height"
+      >
         <v-col
           cols="12"
           md="4"
+          xl="3"
         >
           <v-card
             v-vue-aos="{ animationClass: 'animate__fadeInRight animate__animated' }"
