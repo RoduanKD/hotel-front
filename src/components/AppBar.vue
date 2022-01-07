@@ -198,7 +198,7 @@ export default {
   }),
   created () {
     const self = this
-    this.axios.get('http://hotel.webmyidea.com/api/v1/settings').then(function (res) {
+    this.axios.get('/settings').then(function (res) {
       self.settings = res.data.data.setting
     })
   },
