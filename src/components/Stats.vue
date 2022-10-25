@@ -23,7 +23,7 @@
           width:250px;"
         >
           <div
-            class="text-center pt-12 px-16 black--text white"
+            class="text-center pt-12 px-16 black--text"
           >
             <div>
               <v-icon
@@ -68,7 +68,7 @@
           width:250px;"
         >
           <div
-            class="text-h6 text-center pt-12 px-16 black--text white"
+            class="text-h6 text-center pt-12 px-16 black--text"
           >
             <div>
               <v-icon
@@ -113,7 +113,7 @@
           width:250px;"
         >
           <div
-            class="text-h6 text-center pt-12 px-16 black--text white"
+            class="text-h6 text-center pt-12 px-16 black--text"
           >
             <div>
               <v-icon
