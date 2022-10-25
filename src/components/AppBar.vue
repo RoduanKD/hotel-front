@@ -1,7 +1,7 @@
 <template>
   <v-app-bar
     sticky
-    class="white text-center "
+    class="text-center "
     shrink-on-scroll
     prominent
     height="30px"
@@ -145,7 +145,7 @@
       <v-spacer />
       <v-spacer />
       <v-spacer />
-      <div class="d-flex justify-end  white">
+      <div class="d-flex justify-end ">
         <v-btn
           v-for="icon in icons"
           :key="icon"

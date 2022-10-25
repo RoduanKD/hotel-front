@@ -34,7 +34,7 @@
               >
             </v-avatar>
             <v-card
-              class=" mx-auto text-center justify-center grey lighten-4"
+              class=" mx-auto text-center justify-center"
             >
               <v-card-title class=" justify-center pt-5">
                 {{ member.name }}
